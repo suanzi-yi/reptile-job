@@ -30,7 +30,7 @@ export default {
 
 <style scoped>
 .head-warp {
-    height:64px;
+    height:100px;
     background-color:#fff;
     position:sticky;
     top: 0px;
