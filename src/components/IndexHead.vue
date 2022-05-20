@@ -16,7 +16,7 @@
           </ul> 
           <!-- 登录选项 -->
           <div class="right-menu">
-              <el-button type="primary">登录|注册</el-button>
+              <el-button type="primary" @click="tologin">登录|注册</el-button>
           </div>
       </div>
   </div>
@@ -24,7 +24,12 @@
 
 <script>
 export default {
-    name: "indexhead"
+    name: "indexhead",
+    methods:{
+        tologin(){
+            this.$router.push("/login")
+        }
+    }
 }
 </script>
 
@@ -57,6 +62,7 @@ export default {
     text-align:center;
     line-height:40px;
     flex-grow: 1;
+    transition:background-color .3s ease-in-out;
 }
 .container ul li:hover{
     color: #fff;
@@ -65,5 +71,9 @@ export default {
 /* buttom样式 */
 .el-button--primary{
     background-color: #366aeb;
+}
+.el-button--primary:hover{
+    background-color: #366aeb;
+    opacity: .8;
 }
 </style>
