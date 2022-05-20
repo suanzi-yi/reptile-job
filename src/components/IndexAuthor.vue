@@ -83,6 +83,8 @@ h1{
   flex-direction: column;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   transition: 0.3s ease-in-out;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container .card:hover {
@@ -94,7 +96,6 @@ h1{
   width: 260px;
   height: 260px;
   top: -60px;
-  left: 20px;
   z-index: 1;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }

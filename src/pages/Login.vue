@@ -5,10 +5,10 @@
         <!-- 注册 -->
         <div class="register-box hidden" ref="register_box">
           <h1>register</h1>
-          <input type="text" placeholder="用户名" />
-          <input type="email" placeholder="邮箱" />
-          <input type="password" placeholder="密码" />
-          <input type="password" placeholder="确认密码" />
+          <input required type="text" placeholder="账号" />
+          <input required type="text" placeholder="昵称" />
+          <input required type="password" placeholder="密码" />
+          <input required type="password" placeholder="确认密码" />
           <button>注册</button>
         </div>
         <!-- 登录 -->
@@ -23,7 +23,7 @@
         <h2>欢迎来到<span>爬虫系统</span></h2>
         <p>快来提交你的<span>任务</span>吧</p>
         <!-- <img src="../images/cat/1.png" alt="" /> -->
-        <p>已有账号</p>
+        <p>已有账号?</p>
         <button id="login" @click="tologin">去登录</button>
       </div>
       <div class="con-box right">
@@ -61,7 +61,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* 渐变背景 */
   background: linear-gradient(200deg, #f3e7e9, #e3eeff);
 }
 .container {
@@ -73,13 +72,15 @@ export default {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   /* 相对定位 */
   position: relative;
+  /* background:none; */
 }
 .form-box {
   /* 绝对定位 */
   position: absolute;
   top: -10%;
   left: 5%;
-  background-color: #d3b7d8;
+  background-image:url("../assets/formbox.jpg");
+  background-size: cover;
   width: 320px;
   height: 500px;
   border-radius: 5px;
@@ -129,9 +130,9 @@ input::placeholder {
   color: #fff;
 }
 input:focus {
-  color: #a262ad;
+  color: #fff;
   outline: none;
-  border-bottom: 1px solid #a262ad80;
+  border-bottom: 1px solid #fff;
   transition: 0.5s;
 }
 input:focus::placeholder {
@@ -144,13 +145,13 @@ input:focus::placeholder {
   outline: none;
   border-radius: 8px;
   padding: 13px;
-  color: #a262ad;
+  color: #a49cbb;
   letter-spacing: 2px;
   border: none;
   cursor: pointer;
 }
 .form-box button:hover {
-  background-color: #a262ad;
+  background-color: #6362ad;
   color: #f6f6f6;
   transition: background-color 0.5s ease;
 }
@@ -173,7 +174,7 @@ input:focus::placeholder {
   right: -2%;
 }
 .con-box h2 {
-  color: #8e9aaf;
+  color: #191a1b;
   font-size: 25px;
   font-weight: bold;
   letter-spacing: 3px;
@@ -187,19 +188,14 @@ input:focus::placeholder {
   text-align: center;
 }
 .con-box span {
-  color: #d3b7d8;
+  color: #4d36ce;
 }
-.con-box img {
-  width: 150px;
-  height: 150px;
-  opacity: 0.9;
-  margin: 40px 0;
-}
+
 .con-box button {
   margin-top: 3%;
   background-color: #fff;
-  color: #a262ad;
-  border: 1px solid #d3b7d8;
+  color: #848085;
+  border: 1px solid #6362ad;
   padding: 6px 10px;
   border-radius: 5px;
   letter-spacing: 1px;
@@ -207,7 +203,7 @@ input:focus::placeholder {
   cursor: pointer;
 }
 .con-box button:hover {
-  background-color: #d3b7d8;
+  background-color: #6362ad;
   color: #fff;
 }
 </style>
