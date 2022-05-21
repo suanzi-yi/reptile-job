@@ -15,31 +15,43 @@
       >
         <!-- 一级菜单 -->
         <el-menu-item index="/back/index" @click="savePath(0)">
-          <i class="el-icon-setting"></i>
+          <i class="el-icon-s-home"></i>
           <span slot="title">首页</span>
         </el-menu-item>
 
         <el-submenu>
           <!-- 一级菜单的模板区域 -->
           <template slot="title">
-            <i class="el-icon-s-data"></i>
-            <span>引导页</span>
+            <i class="el-icon-s-order"></i>
+            <span>爬虫任务</span>
           </template>
           <!-- 二级菜单 -->
-          <el-menu-item index="/back/index2" @click="savePath(1)">
+          <el-menu-item index="/back/commit" @click="savePath(1)">
             <template slot="title">
-              <i class="el-icon-menu"></i>
-              <span>子菜单1</span>
+              <i class="el-icon-upload"></i>
+              <span>提交任务</span>
+            </template>
+          </el-menu-item>
+          <el-menu-item index="/back/view" @click="savePath(2)">
+            <template slot="title">
+              <i class="el-icon-s-claim"></i>
+              <span>查看任务</span>
             </template>
           </el-menu-item>
         </el-submenu>
 
         <!-- 一级菜单 -->
-        <el-menu-item index="/back/index3" @click="savePath(2)">
-          <i class="el-icon-setting"></i>
-          <span slot="title">导航三</span>
+        <el-menu-item index="/back/data" @click="savePath(3)">
+          <i class="el-icon-coin"></i>
+          <span slot="title">数据</span>
+        </el-menu-item>
+        <!-- 一级菜单 -->
+        <el-menu-item index="/back/chart" @click="savePath(4)">
+          <i class="el-icon-data-line"></i>
+          <span slot="title">绘图</span>
         </el-menu-item>
       </el-menu>
+      
     </el-aside>
     <!-- 右边 -->
     <el-container>
@@ -88,7 +100,7 @@ export default {
     return {
       isCollapse: false,
       activePath: "",
-      allPaths: [["首页"], ["引导页", "子菜单1"], ["导航栏3"]],
+      allPaths: [["首页"], ["爬虫任务", "提交任务"], ["爬虫任务","查看任务"],["数据"],["绘图"]],
       currentPath: ["首页"],
     };
   },
@@ -149,7 +161,7 @@ export default {
   font-size: 12px;
 }
 .back-main {
-  background-color: #fff;
+  background-color: #f0f2f5;
 }
 /* 菜单 */
 .back-aside .el-menu {
