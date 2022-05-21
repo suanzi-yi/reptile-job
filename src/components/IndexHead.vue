@@ -3,10 +3,6 @@
   <div class="head-warp">
       <!-- 中间 -->
       <div class="container">
-
-          <div class="left-icon">icon
-              <img src="" alt="">
-          </div>
           <!-- 菜单选项 -->
           <ul>
               <li>首页</li>

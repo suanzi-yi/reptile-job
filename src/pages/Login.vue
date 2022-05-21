@@ -14,9 +14,9 @@
         <!-- 登录 -->
         <div class="login-box" ref="login_box">
           <h1>login</h1>
-          <input type="text" placeholder="用户名" />
-          <input type="password" placeholder="密码" />
-          <button>登录</button>
+          <input type="text" placeholder="用户名"  v-model="username" />
+          <input type="password" placeholder="密码" v-model="password" />
+          <button @click="login">登录</button>
         </div>
       </div>
       <div class="con-box left">
@@ -39,6 +39,12 @@
 
 <script>
 export default {
+  data(){
+    return {
+      username:'',
+      password:'',
+    }
+  },
   methods: {
     toregister() {
         this.$refs['form_box'].style.transform="translateX(80%)"
@@ -49,6 +55,12 @@ export default {
         this.$refs['form_box'].style.transform="translateX(0%)"
         this.$refs['register_box'].classList.add("hidden");
         this.$refs['login_box'].classList.remove("hidden");
+    },
+    login(){
+      if (this.username=="admin"&&this.password=="admin") {
+        this.$router.push('/back')
+        this.$message.success('登录成功，欢迎回来！')
+      }
     }
   },
 };

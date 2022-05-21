@@ -11,7 +11,7 @@ import './assets/css/global.css'
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
-
+axios.defaults.baseURL = 'http://127.0.0.1:80/user/'
 Vue.prototype.$http = axios
 /* eslint-disable no-new */
 new Vue({

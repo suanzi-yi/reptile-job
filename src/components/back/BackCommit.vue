@@ -38,7 +38,7 @@
       </div>
       <div class="re-input">
         Re表达式:
-        <input v-model="re" placeholder="Re表达式" spellcheck="“false”" />
+        <input v-model="re" placeholder="Re表达式" spellcheck="false" />
       </div>
       <div class="sub-bton">
         <el-button type="primary" @click="test">测试</el-button>
@@ -95,8 +95,21 @@ export default {
         url: this.url,
         arg: arg || [],
         re: this.re,
+        uuid: Date.now(),
       };
       console.log(submitform);
+      this.$http
+        .post("addjob", submitform)
+        .then((result) => {
+          console.log("==>", result.data.status);
+          if(result.data.status==1){
+              this.$message.success('提交任务成功')
+          }
+          else{
+              this.$message.error('提交任务失败')
+          }
+        })
+        .catch((err) => {});
     },
   },
 };
@@ -120,7 +133,7 @@ export default {
   justify-content: center;
   margin-bottom: 50px;
   font-size: 20px;
-  font-weight:bold;
+  font-weight: bold;
 }
 .page-warp p {
   display: block;
