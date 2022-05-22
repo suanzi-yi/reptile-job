@@ -1,6 +1,17 @@
-=<template>
+<template>
   <div class="card">
-    <!-- <h1>nba爬虫任务展示</h1> -->
+    <div class="selected">
+      选择球员:<el-select v-model="value" placeholder="请选择" @change="getchange">
+        <el-option
+          v-for="item in options"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value"
+        >
+        </el-option>
+      </el-select>
+    </div>
+    <button @click="add">+++1</button>
     <div id="cahrt-warp" :style="{ width: '800px', height: '350px' }"></div>
   </div>
 </template>
@@ -8,12 +19,48 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      options: [
+        {
+          value: "选项1",
+          label: "黄金糕",
+        },
+        {
+          value: "选项2",
+          label: "双皮奶",
+        },
+        {
+          value: "选项3",
+          label: "蚵仔煎",
+        },
+        {
+          value: "选项4",
+          label: "龙须面",
+        },
+        {
+          value: "选项5",
+          label: "北京烤鸭",
+        },
+        
+      ],
+      value: "选项1",
+      data:[55, 66, 100, 110, 110, 112, 112, 115, 120, 150]
+    };
   },
   mounted() {
     this.drawLine();
   },
   methods: {
+    add(){
+      for(var i = 0; i <this.data.length; i++){
+         this.data[i]++;
+      }
+      console.log(this.data);
+      this.drawLine();
+    },
+    getchange(value){
+      console.log(value);
+    },
     drawLine() {
       // 基于准备好的dom，初始化echarts实例
       let myChart1 = this.$echarts.init(document.getElementById("cahrt-warp"));
@@ -92,11 +139,14 @@ export default {
             },
             //设置柱的宽度，要是数据太少，柱子太宽不美观~
             barWidth: 10,
-            data: [55, 66, 100, 110, 110, 112, 112, 115, 120, 150],
+            // data: [55, 66, 100, 110, 110, 112, 112, 115, 120, 150],
+            data:this.data
           },
         ],
       });
+      myChart1.resize();
     },
+   
   },
 };
 </script>
@@ -106,13 +156,13 @@ export default {
   width: 100%;
   background-color: #fff;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   margin: 20px 0;
   padding-top: 20px;
+  position: relative;
 }
-.card-warp {
-  width: 100%;
-  height: 300px;
+#cahrt-warp{
+  margin: 0 auto;
 }
 </style>

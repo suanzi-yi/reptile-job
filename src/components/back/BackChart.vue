@@ -18,24 +18,27 @@
       </div>
       <div class="btn-warp">
         <!-- `checked` 为 true 或 false -->
-        <el-checkbox v-model="chart1" class="btn">统计直方图</el-checkbox>
-        <el-checkbox v-model="chart2" class="btn">折线图</el-checkbox>
-        <el-checkbox v-model="chart3" class="btn">圆环图</el-checkbox>
-        <el-checkbox v-model="chart4" class="btn">圆环图</el-checkbox>
+        <el-checkbox v-model="chart0" class="btn">测试图</el-checkbox>
+        <el-checkbox v-model="chart1" class="btn">个人能力</el-checkbox>
+        <el-checkbox v-model="chart2" class="btn">位置能力图</el-checkbox>
+        <el-checkbox v-model="chart3" class="btn">top5能力堆叠图</el-checkbox>
       </div>
     </div>
 
-    <test v-if="chart1" />
-    <test2 v-if="chart2" />
+    <test v-show="chart0" />
+    <PersonalAbility v-show="chart1" />
+    <AbilityComparison v-show="chart2" />
+    <StackedArea v-show="chart3" />
   </div>
 </template>
 
 <script>
 import test from "../charts/test.vue";
-import test2 from "../charts/test2.vue";
-
+import AbilityComparison from "../charts/AbilityComparison.vue";
+import PersonalAbility from "../charts/PersonalAbility.vue";
+import StackedArea from "../charts/StackedArea.vue";
 export default {
-  components: { test, test2 },
+  components: { test, AbilityComparison ,PersonalAbility,StackedArea},
   data() {
     return {
       tableData: [
@@ -46,10 +49,10 @@ export default {
           status: "0",
         },
       ],
+      chart0: true,
       chart1: true,
       chart2: true,
       chart3: true,
-      chart4: true,
     };
   },
   mounted() {},

@@ -7,27 +7,25 @@
     <div class="container">
       <div class="card">
         <div class="imgBx">
-          <img src="../assets/indeximgs/p1.png" alt="" />
+          <img src="../assets/indeximgs/p11.jpg" alt="" />
         </div>
         <div class="content">
-          <h2>Card One</h2>
+          <h2>王惠栋</h2>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-            recusandae, voluptatibus magnam reprehenderit a numquam. Temporibus
-            esse sit provident quaerat quae.
+            爬取数据，保存数据，并对数据进行分析，数据前后端对接，
+            技术栈：python，pandas，request，numpy，json。
           </p>
         </div>
       </div>
       <div class="card">
         <div class="imgBx">
-          <img src="../assets/indeximgs/p2.png" alt="" />
+          <img src="../assets/indeximgs/p22.jpg" alt="" />
         </div>
         <div class="content">
-          <h2>Card Two</h2>
+          <h2>付纯烨</h2>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-            recusandae, voluptatibus magnam reprehenderit a numquam. Temporibus
-            esse sit provident quaerat quae.
+            前端UI设计，前后端分离项目编写，restful接口设计，
+            技术栈：前端:Vue 2.x,ElementUI,后端：flask。
           </p>
         </div>
       </div>
@@ -36,11 +34,10 @@
           <img src="../assets/indeximgs/p3.png" alt="" />
         </div>
         <div class="content">
-          <h2>Card Three</h2>
+          <h2>翁雪微</h2>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-            recusandae, voluptatibus magnam reprehenderit a numquam. Temporibus
-            esse sit provident quaerat quae.
+            前端UI切图，文字排版设计，素材收集整理，数据整理，PPT制作
+            技术栈：python，pandas，PhotoshopCC。
           </p>
         </div>
       </div>
