@@ -13,3 +13,6 @@ html,body,#app {
 ul,li{
   list-style: none;
 }
+::-webkit-scrollbar {
+  width:0px;
+}

@@ -13,7 +13,7 @@
         <el-table-column prop="status" label="状态" width="250">
           <template slot-scope="scope">
             <el-tag
-              :type="scope.row.status === '已完成' ? 'success' : 'danger'"
+              :type="scope.row.status == 0 ? 'success' : 'danger'"
               disable-transitions
               >{{ scope.row.status==1?'进行中':'已完成' }}</el-tag
             >

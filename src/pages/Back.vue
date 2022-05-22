@@ -48,10 +48,9 @@
         <!-- 一级菜单 -->
         <el-menu-item index="/back/chart" @click="savePath(4)">
           <i class="el-icon-data-line"></i>
-          <span slot="title">绘图</span>
+          <span slot="title">数据可视化</span>
         </el-menu-item>
       </el-menu>
-      
     </el-aside>
     <!-- 右边 -->
     <el-container>
@@ -71,7 +70,7 @@
         <!-- 右侧菜单 -->
         <div class="right-button">
           <!-- 下拉菜单 -->
-          <el-dropdown>
+          <el-dropdown  @command="handleCommand">
             <span class="el-dropdown-link">
               功能菜单<i class="el-icon-arrow-down el-icon--right"></i>
             </span>
@@ -80,7 +79,9 @@
               <el-dropdown-item>功能2</el-dropdown-item>
               <el-dropdown-item>功能3</el-dropdown-item>
               <el-dropdown-item disabled>修改密码</el-dropdown-item>
-              <el-dropdown-item divided>退出登录</el-dropdown-item>
+              <el-dropdown-item divided command="logout"
+                >退出登录</el-dropdown-item
+              >
             </el-dropdown-menu>
           </el-dropdown>
         </div>
@@ -100,7 +101,13 @@ export default {
     return {
       isCollapse: false,
       activePath: "",
-      allPaths: [["首页"], ["爬虫任务", "提交任务"], ["爬虫任务","查看任务"],["数据"],["绘图"]],
+      allPaths: [
+        ["首页"],
+        ["爬虫任务", "提交任务"],
+        ["爬虫任务", "查看任务"],
+        ["数据"],
+        ["数据可视化"],
+      ],
       currentPath: ["首页"],
     };
   },
@@ -108,6 +115,13 @@ export default {
     savePath(n) {
       console.log(n);
       this.currentPath = this.allPaths[n];
+    },
+    handleCommand(command) {
+      console.log(command);
+      if (command == "logout") {
+        this.$router.push("/");
+        this.$message.success("退出登录成功");
+      }
     },
   },
 };
@@ -130,8 +144,8 @@ export default {
   padding-left: 5px;
   position: relative;
   flex-wrap: nowrap;
-  border-bottom: 1px solid rgba(0,0,0,0.2);
-  box-shadow:0 1px 5px rgba(0,0,0,0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 }
 .left-button {
   display: flex;

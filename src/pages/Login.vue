@@ -60,6 +60,8 @@ export default {
       if (this.username=="admin"&&this.password=="admin") {
         this.$router.push('/back')
         this.$message.success('登录成功，欢迎回来！')
+      }else{
+        this.$message.error('登录失败，账号或密码错误！')
       }
     }
   },

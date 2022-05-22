@@ -7,7 +7,7 @@
       <div class="url-input">
         <input
           v-model="url"
-          placeholder="Url或Api接口地址:--槽位置用{{}}标出"
+          placeholder="Url或Api接口地址:--槽位置用{}标出"
           spellcheck="false"
         />
       </div>

@@ -7,12 +7,13 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import axios from 'axios'
 import './assets/css/global.css'
-
+import * as echarts from 'echarts';
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
 axios.defaults.baseURL = 'http://127.0.0.1:80/user/'
 Vue.prototype.$http = axios
+Vue.prototype.$echarts = echarts //绑定原型对象
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
