@@ -26,7 +26,5 @@ export default {
 </script>
 
 <style>
-.index {
-  /* height: 500vh; */
-}
+
 </style>

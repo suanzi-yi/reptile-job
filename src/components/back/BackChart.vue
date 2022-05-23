@@ -59,7 +59,7 @@ export default {
 
 <style scoped>
 .all {
-  /* height: 250%; */
+  height: 150%;
   width: 100%;
   background-color: #f0f2f5;
   display: flex;
