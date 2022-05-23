@@ -18,14 +18,12 @@
       </div>
       <div class="btn-warp">
         <!-- `checked` 为 true 或 false -->
-        <el-checkbox v-model="chart0" class="btn">测试图</el-checkbox>
         <el-checkbox v-model="chart1" class="btn">个人能力</el-checkbox>
         <el-checkbox v-model="chart2" class="btn">位置能力图</el-checkbox>
         <el-checkbox v-model="chart3" class="btn">top5能力堆叠图</el-checkbox>
       </div>
     </div>
 
-    <test v-show="chart0" />
     <PersonalAbility v-show="chart1" />
     <AbilityComparison v-show="chart2" />
     <StackedArea v-show="chart3" />
@@ -33,12 +31,11 @@
 </template>
 
 <script>
-import test from "../charts/test.vue";
 import AbilityComparison from "../charts/AbilityComparison.vue";
 import PersonalAbility from "../charts/PersonalAbility.vue";
 import StackedArea from "../charts/StackedArea.vue";
 export default {
-  components: { test, AbilityComparison ,PersonalAbility,StackedArea},
+  components: { AbilityComparison ,PersonalAbility,StackedArea},
   data() {
     return {
       tableData: [

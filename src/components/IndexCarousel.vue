@@ -6,7 +6,7 @@
         <div class="container">
           <!-- left -->
           <div class="left">
-            <h1>数据挖掘从现在开始</h1>
+            <h1>专业化的篮球数据爬虫分析系统</h1>
             <p>从多种数据源挖取数据，来源广泛</p>
             <el-button type="primary" @click="tologin">立即体验</el-button>
           </div>

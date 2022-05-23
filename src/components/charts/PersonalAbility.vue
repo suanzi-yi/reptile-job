@@ -12,10 +12,12 @@
         </el-option>
       </el-select>
     </div>
-    <div
-      id="PersonalAbility"
-      :style="{ width: '800px', height: '350px' }"
-    ></div>
+    <div class="cahrt-warp">
+      <div
+        id="PersonalAbility"
+        :style="{ width: '1000px', height: '600px' }"
+      ></div>
+    </div>
   </div>
 </template>
 
@@ -25,32 +27,52 @@ export default {
     return {
       options: [
         {
-          value: "选项1",
-          label: "黄金糕",
+          value: "giannis_antetokounmpo",
+          label: "giannis_antetokounmpo",
         },
         {
-          value: "选项2",
-          label: "双皮奶",
+          value: "kevin_durant",
+          label: "kevin_durant",
         },
         {
-          value: "选项3",
-          label: "蚵仔煎",
+          value: "luka_don",
+          label: "luka_don",
         },
         {
-          value: "选项4",
-          label: "龙须面",
+          value: "nikola_jokic",
+          label: "jimmy_butler",
         },
         {
-          value: "选项5",
-          label: "北京烤鸭",
+          value: "ja_morant",
+          label: "ja_morant",
+        },
+        {
+          value: "brandon_ingram",
+          label: "brandon_ingram",
+        },
+        {
+          value: "jayson_tatum",
+          label: "jayson_tatum",
+        },
+        {
+          value: "stephen_curry",
+          label: "stephen_curry",
+        },
+        {
+          value: "donovan_mitchell",
+          label: "donovan_mitchell",
+        },
+        {
+          value: "anthony_edwards",
+          label: "anthony_edwards",
         },
       ],
-      value: "选项1",
+      value: "giannis_antetokounmpo",
+      data: [],
     };
   },
   mounted() {
     this.getdata();
-    this.drawLine();
   },
   methods: {
     getdata(value = this.value) {
@@ -58,8 +80,11 @@ export default {
         .get("onedata?name=" + value)
         .then((result) => {
           console.log(result);
-          if(result.data.status==1){
-              this.$message.success('球员数据拉取成功！')
+          if (result.data.status == 1) {
+            this.data = result.data.data[0];
+            console.log("==>", this.data);
+            this.$message.success("球员数据拉取成功！");
+            this.drawLine();
           }
         })
         .catch((err) => {});
@@ -67,15 +92,46 @@ export default {
     getchange(value) {
       console.log(value);
       this.getdata(value);
-      this.drawLine();
+      // this.drawLine();
     },
     drawLine() {
       // 基于准备好的dom，初始化echarts实例
       let myChart1 = this.$echarts.init(
         document.getElementById("PersonalAbility")
       );
+      let data = this.data;
+      console.log("data==>", data);
+      //设置
+      let option = {
+        title: { text: `球员${this.value}能力图`, x: "center" },
+        legend: {
+          top: "bottom",
+        },
+        toolbox: {
+          show: true,
+          feature: {
+            mark: { show: true },
+            dataView: { show: true, readOnly: false },
+            restore: { show: true },
+            saveAsImage: { show: true },
+          },
+        },
+        series: [
+          {
+            name: "Nightingale Chart",
+            type: "pie",
+            radius: [50, 250],
+            center: ["50%", "50%"],
+            roseType: "area",
+            itemStyle: {
+              borderRadius: 8,
+            },
+            data: this.data,
+          },
+        ],
+      };
       // 绘制图表
-      myChart1.setOption();
+      myChart1.setOption(option);
       //
       myChart1.resize();
     },
@@ -99,7 +155,9 @@ export default {
   display: inline-block;
   margin-bottom: 10px;
 }
-#cahrt-warp {
-  margin: 0 auto;
+.cahrt-warp {
+  display:flex;
+  width: 100%;
+  justify-content: center;
 }
 </style>
