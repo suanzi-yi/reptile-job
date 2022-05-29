@@ -20,14 +20,14 @@
         </div>
       </div>
       <div class="con-box left">
-        <h2>欢迎来到<span>数据采集与分析系统</span></h2>
+        <h2>欢迎来到<span>爬虫系统</span></h2>
         <p>快来提交你的<span>任务</span>吧</p>
         <!-- <img src="../images/cat/1.png" alt="" /> -->
         <p>已有账号?</p>
         <button id="login" @click="tologin">去登录</button>
       </div>
       <div class="con-box right">
-        <h2>欢迎来到<span>数据采集与分析系统</span></h2>
+        <h2>欢迎来到<span>爬虫系统</span></h2>
         <p>快来查看你的<span>任务</span>吧</p>
         <!-- <img src="../images/cat/2.png" alt="" /> -->
         <p>没有账号？</p>
