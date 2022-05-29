@@ -18,7 +18,7 @@ export default {
   methods: {
     getdata() {
       this.$http
-        .get("top5")
+        .get("/scrapy/top5")
         .then((result) => {
           console.log("top5", result);
           this.data = result.data.data;

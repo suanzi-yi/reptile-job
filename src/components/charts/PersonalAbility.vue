@@ -77,7 +77,7 @@ export default {
   methods: {
     getdata(value = this.value) {
       this.$http
-        .get("onedata?name=" + value)
+        .get("/scrapy/onedata?name=" + value)
         .then((result) => {
           console.log(result);
           if (result.data.status == 1) {

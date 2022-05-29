@@ -34,7 +34,7 @@ export default {
   },
   mounted() {
     this.$http
-      .get("getjob")
+      .get("/scrapy/getjob")
       .then((result) => {
         console.log("==>", result.data.data);
         this.tableData=eval(result.data.data);

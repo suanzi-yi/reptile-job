@@ -99,7 +99,7 @@ export default {
       };
       console.log(submitform);
       this.$http
-        .post("addjob", submitform)
+        .post("/scrapy/addjob", submitform)
         .then((result) => {
           console.log("==>", result.data.status);
           if(result.data.status==1){

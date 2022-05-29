@@ -76,7 +76,7 @@ export default {
   },
   mounted() {
     this.$http
-      .get("getalldata")
+      .get("/scrapy/getalldata")
       .then((result) => {
         console.log(result);
         if(result.data.status == 1) {this.$message.success("数据拉取成功！")}

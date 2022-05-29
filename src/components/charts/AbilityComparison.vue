@@ -20,7 +20,7 @@ export default {
   methods: {
     getdata() {
       this.$http
-        .get("threeability")
+        .get("/scrapy/threeability")
         .then((result) => {
           this.data = result.data.data;
           console.log(result);
