@@ -19,7 +19,7 @@
           <span slot="title">首页</span>
         </el-menu-item>
 
-        <el-submenu>
+        <el-submenu index='1'>
           <!-- 一级菜单的模板区域 -->
           <template slot="title">
             <i class="el-icon-s-order"></i>
@@ -50,6 +50,27 @@
           <i class="el-icon-data-line"></i>
           <span slot="title">数据可视化</span>
         </el-menu-item>
+        <el-submenu index='2'>
+          <!-- 一级菜单的模板区域 -->
+          <template slot="title">
+            <i class="el-icon-cpu"></i>
+            <span>深度学习</span>
+          </template>
+          <!-- 二级菜单 -->
+          <el-menu-item :index="'/back/nn-image'" @click="savePath(5)">
+            <template slot="title">
+              <i class="el-icon-picture"></i>
+              <span>图片识别</span>
+            </template>
+          </el-menu-item>
+          <el-menu-item index="/back/nn-video" @click="savePath(6)">
+            <template slot="title">
+              <i class="el-icon-video-camera"></i>
+              <span>视频识别</span>
+            </template>
+          </el-menu-item>
+        </el-submenu>
+        
       </el-menu>
     </el-aside>
     <!-- 右边 -->
@@ -68,7 +89,7 @@
         </el-breadcrumb>
         <!-- 头像区域 -->
         <!-- 右侧菜单 -->
-        <div class="right-button">
+        <div class="right-button" v-show="$route.path == '/back/index'">
           <!-- 下拉菜单 -->
           <el-dropdown  @command="handleCommand">
             <span class="el-dropdown-link">
@@ -107,6 +128,8 @@ export default {
         ["爬虫任务", "查看任务"],
         ["数据"],
         ["数据可视化"],
+        ["深度学习", "图片识别"],
+        ["深度学习", "视频识别"],
       ],
       currentPath: ["首页"],
     };

@@ -8,6 +8,8 @@ import BackCommit from '@/components/back/BackCommit'
 import BackView from '@/components/back/BackView'
 import BackData from '@/components/back/BackData'
 import BackChart from '@/components/back/BackChart'
+import NnImage from '@/components/nn/NnImage'
+import NnVideo from '@/components/nn/NnVideo'
 Vue.use(Router)
 
 export default new Router({
@@ -44,6 +46,14 @@ export default new Router({
         { 
           path:'chart',
           component:BackChart
+        },
+        { 
+          path:'nn-image',
+          component:NnImage
+        },
+        { 
+          path:'nn-video',
+          component:NnVideo
         },
       ]
     }
