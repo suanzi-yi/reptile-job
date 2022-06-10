@@ -48,6 +48,7 @@ export default new Router({
           component:BackChart
         },
         { 
+          name:'nn-image',
           path:'nn-image',
           component:NnImage
         },
