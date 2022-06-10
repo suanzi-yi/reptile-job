@@ -14,11 +14,11 @@
 </template>
 
 <script>
-import IndexHead from "@/components/IndexHead";
-import IndexCarousel from "@/components/IndexCarousel";
-import IndexAuthor from "@/components/IndexAuthor";
-import IndexProduct from "@/components/IndexProduct";
-import IndexUseage from "@/components/IndexUseage";
+import IndexHead from "@/components/index/IndexHead";
+import IndexCarousel from "@/components/index/IndexCarousel";
+import IndexAuthor from "@/components/index/IndexAuthor";
+import IndexProduct from "@/components/index/IndexProduct";
+import IndexUseage from "@/components/index/IndexUseage";
 export default {
   name: "index",
   components: { IndexHead, IndexCarousel, IndexAuthor, IndexProduct ,IndexUseage},

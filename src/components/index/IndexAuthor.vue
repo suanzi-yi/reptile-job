@@ -7,7 +7,7 @@
     <div class="container">
       <div class="card">
         <div class="imgBx">
-          <img src="../assets/indeximgs/p11.jpg" alt="" />
+          <img src="../../assets/indeximgs/p11.jpg" alt="" />
         </div>
         <div class="content">
           <h2>王惠栋</h2>
@@ -19,7 +19,7 @@
       </div>
       <div class="card">
         <div class="imgBx">
-          <img src="../assets/indeximgs/p22.jpg" alt="" />
+          <img src="../../assets/indeximgs/p22.jpg" alt="" />
         </div>
         <div class="content">
           <h2>付纯烨</h2>
@@ -31,7 +31,7 @@
       </div>
       <div class="card">
         <div class="imgBx">
-          <img src="../assets/indeximgs/p33.jpg" alt="" />
+          <img src="../../assets/indeximgs/p33.jpg" alt="" />
         </div>
         <div class="content">
           <h2>翁雪微</h2>

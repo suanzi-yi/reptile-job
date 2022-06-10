@@ -12,7 +12,7 @@
           </div>
           <!-- right -->
           <div>
-            <img src="../assets/zouma/zouma1.png" alt="">
+            <img src="../../assets/zouma/zouma1.png" alt="">
           </div>
         </div>
       </el-carousel-item>
@@ -27,7 +27,7 @@
           </div>
           <!-- right -->
           <div>
-            <img src="../assets/zouma/zouma2.png" alt="">
+            <img src="../../assets/zouma/zouma2.png" alt="">
           </div>
         </div>
       </el-carousel-item>
@@ -42,7 +42,7 @@
           </div>
           <!-- right -->
           <div>
-            <img src="../assets/zouma/zouma1.png" alt="">
+            <img src="../../assets/zouma/zouma1.png" alt="">
           </div>
         </div>
       </el-carousel-item>
