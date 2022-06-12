@@ -110,7 +110,7 @@
       <!-- 主体区域容器 -->
       <el-main class="back-main">
         <!-- 路由占位符 -->
-      <keep-alive include="nn-image">
+      <keep-alive include="nn-image,nn-video">
         <router-view></router-view>
       </keep-alive>
       </el-main>

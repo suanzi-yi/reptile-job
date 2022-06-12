@@ -1,17 +1,24 @@
 <template>
-  <div class="container">
+  <div
+    class="container"
+    v-loading="loading"
+    element-loading-text="拼命加载中"
+    element-loading-spinner="el-icon-loading"
+    element-loading-background="rgba(255, 255, 255, 0.8)"
+  >
     <h1>人物位置视频检测与标注</h1>
     <el-upload
       class="upload-demo"
       ref="upload"
       action="http://127.0.0.1:80/nn/video"
       :limit="1"
+      :on-progress="handleProgress"
       :on-exceed="handleExceed"
       :on-change="handleChange"
       :on-success="handleSuccess"
-      accept=".mp4" 
+      accept=".mp4"
       :auto-upload="false"
-      :data="{ name,model }"
+      :data="{ name, model }"
       list-type="picture"
     >
       <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
@@ -29,7 +36,7 @@
         @click="clearImage"
         >清空列表</el-button
       >
-      <div class="model-select"> 
+      <div class="model-select">
         nn模型：
         <el-radio v-model="model" label="offical">官方模型(yolov4)</el-radio>
         <el-radio v-model="model" label="self">自定义模型</el-radio>
@@ -38,20 +45,20 @@
     </el-upload>
     <div v-if="getdata" class="result">
       <h1>原始视频:</h1>
-      <video :src="'http://127.0.0.1'+path" controls></video>
+      <video :src="'http://127.0.0.1' + path" controls></video>
       <h1>
         检测结果视频:&nbsp;&nbsp;&nbsp;<em style="color: blue"
           >检测耗时：{{ time + "s" }}</em
         >
       </h1>
-      <video :src="'http://127.0.0.1'+nn_path" controls></video>
+      <video :src="'http://127.0.0.1' + nn_path" controls></video>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name:'nn-image',
+  name: "nn-video",
   data() {
     return {
       getdata: false,
@@ -60,11 +67,15 @@ export default {
       nn_path: "", //检验后的数据
       time: "",
       model: "offical",
+       loading: false,
     };
   },
   methods: {
     submitUpload() {
       this.$refs.upload.submit();
+    },
+     handleProgress() {
+      this.loading = true;
     },
     handleSuccess(response, file) {
       console.log(response);
@@ -72,6 +83,7 @@ export default {
       this.path = response.path;
       this.nn_path = response.nn_path;
       this.time = response.time;
+      this.loading=false;
     },
     handleChange(file) {
       this.name = file.name;
@@ -82,7 +94,7 @@ export default {
     clearImage() {
       this.$refs.upload.clearFiles();
       this.getdata = false;
-      this.model='offical'
+      this.model = "offical";
     },
   },
 };
@@ -100,8 +112,8 @@ export default {
   /* text-align: center; */
   margin-bottom: 30px;
 }
-.model-select{
-  margin-top:5px;
+.model-select {
+  margin-top: 5px;
   margin-bottom: 5px;
 }
 .result {
