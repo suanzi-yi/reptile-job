@@ -84,6 +84,7 @@ export default {
       this.nn_path = response.nn_path;
       this.time = response.time;
       this.loading=false;
+      this.$message.success("检测成功！")
     },
     handleChange(file) {
       this.name = file.name;
